@@ -1,5 +1,5 @@
-import { signInWithPopup, signOut } from "firebase/auth";
-import { auth, provider } from ".././../firebase";
+// import { signInWithPopup, signOut } from "firebase/auth";
+// import { auth, provider } from ".././../firebase";
 
 import { Link } from "react-router-dom";
 
