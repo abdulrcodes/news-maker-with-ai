@@ -1,0 +1,66 @@
+Project Plan: News Maker
+Project Overview:
+The web app will fetch news articles from an bacend API, create news based on that user givene title and create that news with ai suggations
+
+Tech Stack:
+Frontend: React, Tailwind CSS
+Backend: Express.js (Node.js , Express)
+Database: PostgreSQL with Prisma ORM
+Authentication: Firebase Google Authentication
+Create News With: OpenAI API
+Deployment:
+Frontend: Vercel
+Backend: Render
+Database: PostgreSQL Neon
+
+
+1. Google Authentication (Firebase)
+Functionality:
+Users can sign in and sign out using Google authentication via Firebase.
+The authenticated user's data (e.g., UID, email) is stored and used to manage personalized news, saved articles, and recommendations.
+Tech: Firebase Authentication, Firebase SDK, Google Auth Provider
+
+2. Create News Based on Title
+Functionality:
+Allow users to manually create news articles by inputting a title and other information (e.g., description, URL).
+Summarize the news article based on the content provided (using a summarization API).
+Tech: Prisma ORM (to store news), Express.js (backend route to handle creation), Summarization API (e.g., OpenAI API or Hugging Face models)
+
+3. Edit News
+Functionality:
+Enable authenticated users to edit the news articles they have created.
+Allow changes to the title, summary, and URL of the article.
+Tech: Prisma ORM (update query), Express.js route to handle edits
+
+4. Delete News
+Functionality:
+Allow users to delete news articles they created or saved.
+Remove the article from the PostgreSQL database via Prisma.
+Tech: Prisma ORM (delete query), Express.js route to handle deletion
+
+5. Save/Unsave News
+Functionality:
+Authenticated users can save news articles they are interested in for future reading.
+Users can unsave news articles from their saved list.
+Saved articles are linked to the user in the database.
+Tech: Prisma ORM (one-to-many relationship between user and news), Express.js (save/unsave routes), Firebase Authentication (for user authentication)
+
+6. Search News
+Functionality:
+Users can search for news articles based on titles, keywords, or categories.
+The search results will be filtered and displayed in real-time.
+Tech: Express.js (search route that queries the PostgreSQL database), PostgreSQL full-text search capabilities
+
+
+7. Infinite Scrolling
+Functionality:
+Implement infinite scrolling on the homepage or search results to load more news articles as the user scrolls down the page.
+This provides a seamless user experience by loading news in batches rather than all at once.
+Tech: React (frontend with scroll detection), Express.js (backend to handle pagination), PostgreSQL (query with pagination)
+
+8. Personalized Recommended News
+Functionality:
+Provide users with personalized news recommendations based on their saved articles, search history, or categories of interest.
+Use collaborative filtering or machine learning-based recommendation algorithms to suggest relevant news articles.
+Tech: Express.js (to handle recommendations), Prisma (to store user preferences and interactions), Machine learning libraries (optional for more advanced recommendations)
+
