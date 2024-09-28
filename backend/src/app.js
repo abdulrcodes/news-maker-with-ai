@@ -16,4 +16,9 @@ const articaleRoutes = require("../routes/articaleRoutes");
 app.use("/api/auth", authRoutes);
 app.use("/api/news", articaleRoutes);
 
+// Default Test Route
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "Server is running successfully!" });
+});
+
 module.exports = app;
