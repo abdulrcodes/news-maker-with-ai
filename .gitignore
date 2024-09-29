@@ -8,8 +8,10 @@ pnpm-debug.log*
 lerna-debug.log*
 
 github-commit.txt
-plane.txt
+planes.txt
 
+.env
+.env.local
 node_modules
 dist
 dist-ssr
